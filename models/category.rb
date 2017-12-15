@@ -27,5 +27,27 @@ class Category
     return houses
   end
 
-
+  def self.find(id)
+    sql = "SELECT * FROM categories WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    category = Category.new(result.first)
+    return house
   end
+
+  def self.delete_all()
+    sql = "DELETE FROM categories"
+    values =[]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.map_items(house_data)
+    result = category_data.map {|category| Category.new(category)}
+    return result
+  end
+
+end
+
+
+
+end
