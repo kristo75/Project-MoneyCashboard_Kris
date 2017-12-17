@@ -24,7 +24,7 @@ class Category
     values = []
     result = SqlRunner.run(sql, values)
     categories = result.map {|category_hash| Category.new (category_hash)}
-    return houses
+    return category
   end
 
   def self.find(id)
@@ -32,7 +32,7 @@ class Category
     values = [id]
     result = SqlRunner.run(sql, values)
     category = Category.new(result.first)
-    return house
+    return category
   end
 
   def self.delete_all()
@@ -41,7 +41,7 @@ class Category
     SqlRunner.run(sql, values)
   end
 
-  def self.map_items(house_data)
+  def self.map_items(category_data)
     result = category_data.map {|category| Category.new(category)}
     return result
   end
