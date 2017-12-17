@@ -9,7 +9,35 @@ class Vendor
     @vendor_name = options['vendor_name']
   end
 
-def self.all()
-  sql ="SELECT * FROM transactions"
+  def save()
+
+  end
+
+  def self.all()
+    sql = "SELECT * FROM vendors"
+    values = []
+    result = SqlRunner.run(sql, values)
+    vendors = result.map {|vendor_hash| Vendor.new (vendor_hash)}
+    return vendor
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM categories WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    vendor = Vendor.new(result.first)
+    return vendor
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM categories"
+    values =[]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.map_items(vendor_data)
+    result = vendor_data.map {|vendor| Category.new(vendor)}
+    return result
+  end
 
   end
