@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Category
 
-  attr_reader :category_name
+  attr_reader :category_name, :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -10,7 +10,7 @@ class Category
   end
 
   def save()
-    sql = "INSERT INTO category
+    sql = "INSERT INTO categories
     (category_name)
     VALUES($1)
     RETURNING *"

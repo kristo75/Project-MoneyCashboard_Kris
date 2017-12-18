@@ -1,7 +1,11 @@
+require('pry-byebug')
 require_relative('../models/category')
 require_relative('../models/transaction')
 require_relative('../models/vendor')
 
+Transaction.delete_all()
+Vendor.delete_all()
+Category.delete_all()
 
 category1 = Category.new({
   "category_name" => "Groceries"
@@ -35,10 +39,6 @@ category4.save()
 category5.save()
 category6.save()
 
-
-Categroy.delete_all()
-
-
 vendor1 = Vendor.new({
   "vendor_name" => "Sainsburys"
   })
@@ -70,14 +70,13 @@ vendor4.save()
 vendor5.save()
 vendor6.save()
 
-Vendor.delete_all()
 
-transaction1 = Transaction.new ({"total" => 30, "name" => "Groceries"})
-transaction2 = Transaction.new ({"total" => 18, "name" => "Social"})
-transaction3 = Transaction.new ({"total" => 48, "name" => "Transport"})
-transaction4 = Transaction.new ({"total" => 75, "name" => "Clothes"})
-transaction5 = Transaction.new ({"total" => 45, "name" => "Gym"})
-transaction6 = Transaction.new ({"total" =>  20, "name" => "Takeaway"}
+transaction1 = Transaction.new ({"amount" => 30, "category_id" => category1.id, "vendor_id" => vendor1.id})
+transaction2 = Transaction.new ({"amount" => 18, "category_id" => category2.id, "vendor_id" => vendor2.id})
+transaction3 = Transaction.new ({"amount" => 48, "category_id" => category3.id, "vendor_id" => vendor3.id})
+transaction4 = Transaction.new ({"amount" => 75, "category_id" => category4.id, "vendor_id" => vendor4.id})
+transaction5 = Transaction.new ({"amount" => 45, "category_id" => category5.id, "vendor_id" => vendor5.id})
+transaction6 = Transaction.new ({"amount" => 20, "category_id" => category6.id, "vendor_id" => vendor6.id})
 
 transaction1.save
 transaction2.save
@@ -88,5 +87,6 @@ transaction6.save
 
 
 
-      binding.pry
-      nil
+
+binding.pry
+nil

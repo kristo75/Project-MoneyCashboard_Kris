@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Vendor
 
-  attr_reader :id, :vendor_name,
+  attr_reader :id, :vendor_name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -52,4 +52,4 @@ class Vendor
     return result
   end
 
-  end
+end

@@ -9,12 +9,12 @@ CREATE TABLE categories(
 
 CREATE TABLE vendors(
   id SERIAL4 PRIMARY KEY,
-  vendor_name VARCHAR
+  vendor_name VARCHAR(255)
 );
 
 CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
   vendor_id INT4 REFERENCES vendors(id),
-  amount INT4
+  amount INT4,
   category_id INT4 REFERENCES categories(id)
 );
