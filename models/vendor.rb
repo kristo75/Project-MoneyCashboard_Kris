@@ -42,7 +42,7 @@ class Vendor
   end
 
   def self.delete_all()
-    sql = "DELETE FROM categories"
+    sql = "DELETE FROM vendors"
     values =[]
     SqlRunner.run(sql, values)
   end

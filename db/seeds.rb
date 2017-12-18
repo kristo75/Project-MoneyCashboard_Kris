@@ -16,11 +16,11 @@ category2 = Category.new({
   })
 
 category3 = Category.new({
-  "category_name" => "Transport"
+  "category_name" => "Clothes"
   })
 
 category4 = Category.new({
-  "category_name" => "Clothes"
+  "category_name" => "Transport"
   })
 
 category5 = Category.new({

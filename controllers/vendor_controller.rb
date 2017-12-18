@@ -4,27 +4,43 @@ require( 'pry-byebug' )
 require_relative( '../models/vendor.rb' )
 
 
-# INDEX
-get('/vendors') do
-  @vendors = Vendor.all()
-  erb(:index)
+# INDEX - READ
+get '/vendors' do
+  @vendor_name = Vendor.all()
+  erb(:'vendors/index')
 end
 
-# NEW
-get('/vendors/new') do
-  erb(:new)
+# NEW - CREATE
+get '/vendors/new' do
+  @vendor_name= Vendor.all()
+  erb(:'vendors/new')
 end
 
-# SHOW
-get('/vendors/:id') do
-  id = params[:id]
-  @vendors = Vendor.find(id)
-  erb(:show)
-end
-
-# CREATE
-post('/vendor') do
-  @vendor = Vendor.new(params)
+#CREATE - CREATE
+post '/vendors' do
+  @vendor_name = Vendor.new(params)
   @vendor.save()
-  erb(:create)
+  redirect '/vendors'
+end
+
+
+
+#edit
+get '/vendors/edit' do # edit
+  @vendor_name = Vendor.find( params[:id] )
+  erb( :edit )
+end
+
+#update
+post '/vendors/:id' do
+  Vendor.new( params ).update
+  redirect to '/vendors'
+end
+
+
+#delete
+post '/categories/:id/delete' do
+  category = category.find( params[:id] )
+  category.delete()
+  redirect to '/categories'
 end

@@ -1,1 +1,30 @@
-<form method="post" action="/budget">
+<h2>New Transaction</h2>
+
+<form class="" action="/transactions" method="POST">
+
+  <div class="form-drop-down">
+       <label for="vendor-select">Vendor:</label>
+       <select name="vendor_id" id="vendor_name-select">
+         <% @vendors.each do |vendor| %>
+             <option value=<%= vendor.id %>><%= vendor.vendor_name.capitalize %></option>
+         <% end %>
+       </select>
+  </div>
+
+  <div class="form-drop-down">
+       <label for="category-select">Category:</label>
+       <select name="category_id" id="vendor_name-select">
+         <% @category.each do |category| %>
+             <option value=<%= category.id %>><%= category.category_name.capitalize %></option>
+         <% end %>
+       </select>
+  </div>
+
+  <label for="amount-input">Amount:</label>
+  <input id="amount-input" type="number" step="0.01" placeholder="0.00" name="amount" value="">
+
+
+
+  <br>
+  <input class="side-button" type="submit" name="" value="New Transaction">
+</form>
