@@ -30,7 +30,7 @@ class Vendor
     values = []
     result = SqlRunner.run(sql, values)
     vendors = result.map {|vendor_hash| Vendor.new (vendor_hash)}
-    return vendor
+    return vendors
   end
 
   def self.find(id)
@@ -48,7 +48,7 @@ class Vendor
   end
 
   def self.map_items(vendor_data)
-    result = vendor_data.map {|vendor| Category.new(vendor)}
+    result = vendor_data.map {|vendor| Vendor.new(vendor)}
     return result
   end
 

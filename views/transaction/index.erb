@@ -1,8 +1,8 @@
 <h2>All Transactions</h2>
 <% @transactions.each do |transaction|  %>
 
-<p>Vendor: <%=transaction.vendor.name  %></p>
-<p>Category: <%=transaction.category.name %></p>
+<p>Vendor: <%=transaction.vendor.vendor_name  %></p>
+<p>Category: <%=transaction.category.category_name %></p>
 <p>Amount: <%=transaction.amount %></p>
 
 <hr/>

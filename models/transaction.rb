@@ -41,14 +41,14 @@ class Transaction
     values = []
     result = SqlRunner.run(sql, values)
     transactions = result.map {|transaction_hash| Transaction.new (transaction_hash)}
-    return transaction
+    return transactions
   end
 
   def self.find(id)
     sql = "SELECT * FROM transactions WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql, values)
-    transaction = Category.new(result.first)
+    transaction = Transaction.new(result.first)
     return transaction
   end
 

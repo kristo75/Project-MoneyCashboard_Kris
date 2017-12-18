@@ -10,7 +10,7 @@ require_relative( '../models/vendor.rb' )
 
 get('/transactions') do
   @transactions = Transaction.all()
-  erb(:"transactions/index")
+  erb(:"transaction/index")
 end
 
 # NEW route
@@ -18,15 +18,35 @@ end
 get('/transactions/new') do
   @vendors = Vendor.all()
   @category = Category.all()
-  erb(:"transactions/new")
+  erb(:"transaction/new")
 end
 
 # CREATE route
 
 post('/transactions') do
-
-  @transaction = Transaction.new(params)
+  @transaction = Transaction.#editnew(params)
   @transaction.save()
-  erb(:"transactions/create")
+  erb(:"transaction/create")
   redirect to("/transactions")
+end
+#update
+
+#edit
+get '/transact/edit' do # edit
+  @transaction = Transaction.find( params[:id] )
+  erb( :edit )
+end
+
+#update
+post '/transactions/:id' do
+  Transaction.new( params ).update
+  redirect to '/transactions'
+end
+
+
+#delete
+post '/transactions/:id/delete' do 
+  transaction = Transaction.find( params[:id] )
+  transaction.delete()
+  redirect to '/transactions'
 end

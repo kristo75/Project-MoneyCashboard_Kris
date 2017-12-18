@@ -32,7 +32,7 @@ class Category
     values = []
     result = SqlRunner.run(sql, values)
     categories = result.map {|category_hash| Category.new (category_hash)}
-    return category
+    return categories
   end
 
   def self.find(id)
