@@ -24,7 +24,7 @@ end
 # CREATE route
 
 post('/transactions') do
-  @transaction = Transaction.#editnew(params)
+  @transaction = Transaction.new(paras)
   @transaction.save()
   erb(:"transaction/create")
   redirect to("/transactions")
@@ -32,7 +32,7 @@ end
 #update
 
 #edit
-get '/transact/edit' do # edit
+get '/transaction/edit' do 
   @transaction = Transaction.find( params[:id] )
   erb( :edit )
 end
@@ -45,7 +45,7 @@ end
 
 
 #delete
-post '/transactions/:id/delete' do 
+post '/transactions/:id/delete' do
   transaction = Transaction.find( params[:id] )
   transaction.delete()
   redirect to '/transactions'

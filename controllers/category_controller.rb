@@ -19,7 +19,29 @@ end
 
 #CREATE - CREATE
 post '/categories' do
-  @category_new = Category.new(params)
+  @category_name = Category.new(params)
   @category.save()
   redirect '/categories'
+end
+
+
+
+#edit
+get '/categories/edit' do # edit
+  @category_new = Category.find( params[:id] )
+  erb( :edit )
+end
+
+#update
+post '/categories/:id' do
+  Category.new( params ).update
+  redirect to '/categories'
+end
+
+
+#delete
+post '/categories/:id/delete' do
+  category = category.find( params[:id] )
+  category.delete()
+  redirect to '/categories'
 end
