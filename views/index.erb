@@ -1,10 +1,10 @@
 <h1>Your summary of current spend</h1>
 
-<p>Your Wallet: £<%= @wallet.budget %></p>
+<p>Your allowance is: <b>£<%= @wallet.budget %></p></b>
 
-<p>To date you have spent: £<%= @total %></p>
+<p>To date you have spent: <b>£<%= @total %></p></b>
 <br>
-<p>You have £<%= @wallet.budget.to_i - @total.to_f %> left in your wallet,
+<p>You have <b>£<%= @wallet.budget.to_i - @total.to_f %></b> left in your wallet,
   so take it easy!</p>
 
 

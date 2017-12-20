@@ -3,17 +3,28 @@ body {
   background: grey;
   background-size: 100%;
   color: black;
-  font-family: georgia;
+  font-family: 'Poiret One', cursive;
+  font-size: 18px;
   padding: 50px;
   margin: 20px;
 }
 
 
 h1 {
-  font-size: 1.8em;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 18px;
   color: black;
   margin-bottom: 20px;
 }
 section {
+  background-color: grey;
+  float: center;
+}
+main {
+  background-color: grey;
   float: center;
 }

@@ -4,7 +4,7 @@
   padding: 8px 12px;
   color: white;
   cursor:pointer;
-  font-family: georgia;
+  font-family: 'Poiret One', cursive;
 }
 
 .btn--menu {
@@ -33,3 +33,4 @@ li a {
 
 li a:hover {
     background-color: #111;
+    border: 2px solid #f4f6f9; /* Green */

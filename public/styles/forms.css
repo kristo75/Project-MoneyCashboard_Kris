@@ -1,6 +1,6 @@
 input[type="submit"] {
   text-transform: uppercase;
-  font-family: georgia;
+  font-family: 'Poiret One', cursive;
 }
 
 select {
@@ -10,7 +10,7 @@ select {
  font-size: 0.8em;
  -webkit-appearance: none;
  background: 96% / 15% no-repeat white;
- font-family: georgia;
+ font-family: 'Poiret One', cursive;
  border: 1px solid #eee;
  display: block;
 }
@@ -20,5 +20,5 @@ select {
   outline-style: none;
 }
  footer {
-   font-size: 8px;
+   font-size: 12px;
  }

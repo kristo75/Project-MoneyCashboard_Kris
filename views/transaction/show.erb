@@ -1,7 +1,7 @@
 <h2>Transaction Summary</h2>
 <p>Vendor: <%= @transaction.vendor.vendor_name %></p>
 <p>Category: <%= @transaction.category.category_name %></p>
-<p>Amount: <%= @transaction.amount %></p>
+<p>Amount:£ <%= @transaction.amount %></p>
 
 
 <form class="" action="/transactions/<%= @transaction.id %>/edit" method="get">
