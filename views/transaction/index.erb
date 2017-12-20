@@ -1,11 +1,13 @@
 <h2>All Tansactions</h2>
 <% @transactions.each do |transaction|  %>
+<table>
 
-<p>Vendor: <%=transaction.vendor.vendor_name  %></p>
-<p>Category: <%=transaction.category.category_name %></p>
-<p>Amount: <%=transaction.amount %></p>
+<p><b>Vendor:</b> <%=transaction.vendor.vendor_name  %></p>
+<p><b>Category:</b> <%=transaction.category.category_name %></p>
+<p><b>Amount:</b> £<%=transaction.amount %></p>
 
 <p> <a href="/transactions/<%= transaction.id %>/edit">Edit Transaction:</a> </p>
+</table>
 
 <hr/>
 
