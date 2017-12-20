@@ -19,3 +19,6 @@ select {
   outline-color: transparent;
   outline-style: none;
 }
+ footer {
+   font-size: 8px;
+ }
