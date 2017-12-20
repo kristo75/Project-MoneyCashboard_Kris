@@ -19,16 +19,16 @@ end
 #CREATE - CREATE
 post '/vendors' do
   @vendor_name = Vendor.new(params)
-  @vendor.save()
+  @vendor_name.save()
   redirect '/vendors'
 end
 
 
 
 #edit
-get '/vendors/edit' do # edit
+get '/vendors/:id/edit' do # edit
   @vendor_name = Vendor.find( params[:id] )
-  erb( :edit )
+  erb( :"/vendors/edit" )
 end
 
 #update

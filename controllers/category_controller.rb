@@ -25,11 +25,10 @@ post '/categories' do
 end
 
 
-
 #edit
-get '/categories/edit' do # edit
-  @category_new = Category.find( params[:id] )
-  erb( :edit )
+get '/categories/:id/edit' do # edit
+  @category = Category.find( params[:id] )
+  erb( :'categories/edit' )
 end
 
 #update

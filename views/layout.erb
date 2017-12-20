@@ -2,11 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>StudentBudgetTracker</title>
+    <title>Student Budget Tracker</title>
+
+<link rel="stylesheet" type="text/css" href="/styles/structure.css">
+
   </head>
   <body>
-<h1>Student Budget Tracker</h1>
-<%= yield %>
-
+    <main class ="">
+      <nav>
+        <ul>
+          <li>
+            <a href="/transactions">View Transactions</a>
+            <li>
+              <a href="/transactions/new">Create New Transaction</a>
+          </li>
+          <li>
+            <a href="/vendors">View Vendors</a>
+          </li>
+          <li>
+            <a href="/vendors/new">Create New Vendor</a>
+          </li>
+          <li>
+            <a href="/categories">View Categories</a>
+          </li>
+          <li>
+            <a href="/categories/new">Create New Category</a>
+          </li>
+        </ul>
+      </nav>
+      <section id="content">
+      <%= yield %>
+      </section>
+    </main>
+    <footer>
+      <br>
+    </footer>
   </body>
 </html>

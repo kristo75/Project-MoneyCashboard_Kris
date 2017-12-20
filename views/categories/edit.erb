@@ -1,0 +1,14 @@
+<h2>Edit Category</h2>
+<form class="" action="/categories/<%= @category.id %>" method="POST">
+
+
+  <div class="form-drop-down">
+    <label for="category-select">Category:</label>
+    <input type="text" name="category_name" value="<%=@category.category_name%>">
+  </div>
+
+
+
+  <br>
+  <input class="side-button" type="submit" name="" value="Update Transaction">
+</form>

@@ -9,6 +9,21 @@ class Category
     @category_name = options['category_name']
   end
 
+  def update()
+      sql = "UPDATE categories
+      SET category_name = $1
+      WHERE id = $2"
+      values = [@category_name, @id]
+      SqlRunner.run( sql, values )
+    end
+
+    def total_spend()
+    sql = "SELECT SUM(amount) FROM transactions
+          WHERE category_id = $1;"
+    values = [@id]
+    return SqlRunner.run(sql, values).first["sum"]
+  end
+
   def save()
     sql = "INSERT INTO categories
     (category_name)
@@ -48,6 +63,8 @@ class Category
     values =[]
     SqlRunner.run(sql, values)
   end
+
+
 
   def self.map_items(category_data)
     result = category_data.map {|category| Category.new(category)}

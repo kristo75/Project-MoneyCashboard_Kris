@@ -17,6 +17,13 @@ class Vendor
     @id = vendor_hash["id"].to_i
   end
 
+  def total_spend()
+  sql = "SELECT SUM(amount) FROM transactions
+        WHERE vendor_id = $1;"
+  values = [@id]
+  return SqlRunner.run(sql, values).first["sum"]
+end
+
   def transactions()
     sql = "SELECT * FROM transactions
           WHERE vendor_id = $1;"
@@ -24,6 +31,8 @@ class Vendor
     transaction_hashes = SqlRunner.run(sql, values)
     return Transaction.map_items(transaction_hashes)
   end
+
+
 
   def self.all()
     sql = "SELECT * FROM vendors"

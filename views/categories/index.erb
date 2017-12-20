@@ -1,0 +1,10 @@
+<h2>Category</h2>
+
+<% @category_name.each do |category| %>
+
+<p>Name: <%= category.category_name %></p>
+<p>Total Spend: £<%= category.total_spend %></p>
+<p> <a href="/categories/<%= category.id %>/edit">Edit:</a> </p>
+
+<hr/>
+<% end %>

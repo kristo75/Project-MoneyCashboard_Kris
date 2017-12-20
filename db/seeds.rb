@@ -2,6 +2,7 @@ require('pry-byebug')
 require_relative('../models/category')
 require_relative('../models/transaction')
 require_relative('../models/vendor')
+require_relative('../models/wallet')
 
 Transaction.delete_all()
 Vendor.delete_all()
@@ -85,6 +86,11 @@ transaction4.save
 transaction5.save
 transaction6.save
 
+wallet = Wallet.new({
+  "name" => "Josh"
+  })
+
+wallet.save()
 
 
 

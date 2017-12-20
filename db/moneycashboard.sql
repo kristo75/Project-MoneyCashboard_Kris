@@ -18,3 +18,9 @@ CREATE TABLE transactions(
   amount INT4,
   category_id INT4 REFERENCES categories(id)
 );
+
+CREATE TABLE wallets(
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  budget DECIMAL
+)

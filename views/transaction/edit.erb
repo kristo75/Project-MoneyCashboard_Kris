@@ -1,0 +1,31 @@
+<h2>Edit Transaction</h2>
+<form class="" action="/transactions/<%= @transaction.id %>" method="POST">
+
+  <form action="/transactions/<%= @transaction.id %>" method="POST">
+
+  <label for="category-input">Category:</label>
+  <select id="category-input" name="category_id">
+    <% @categorys.each do |category| %>
+    <option <%= "selected" if @transaction.category_id == category.id %>
+      value="<%= category.id %>"> <%= category.category_name %> </option>
+
+    <% end %>
+
+  </select>
+
+  <label for="vendor-input">Vendor:</label>
+  <select id="vendor-input" name="vendor_id">
+    <% @vendors.each do |vendor| %>
+    <option <%= "selected" if @transaction.vendor_id == vendor.id %>
+      value="<%= vendor.id %>"> <%= vendor.vendor_name %> </option>
+
+    <% end %>
+
+
+  </select>
+
+  <label for="amount-input">Amount:</label>
+  <input id="amount-input" type="number" name="amount" value="<%= @transaction.amount %>">
+
+  <input type="submit" value="Update Transaction">
+</form>

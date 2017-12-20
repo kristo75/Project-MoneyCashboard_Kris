@@ -1,0 +1,8 @@
+<h1>Your summary of current spend</h1>
+
+<p>Your Budget: £<%= @wallet.budget %></p>
+
+<p>To date you have spent: £<%= @total %></p>
+<br>
+<p>You have £<%= @wallet.budget.to_i - @total.to_f %> left to spend this month,
+  so take it easy!</p>

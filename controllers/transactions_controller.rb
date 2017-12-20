@@ -24,22 +24,24 @@ end
 # CREATE route
 
 post('/transactions') do
-  @transaction = Transaction.new(paras)
+  @transaction = Transaction.new(params)
   @transaction.save()
   erb(:"transaction/create")
   redirect to("/transactions")
 end
-#update
 
 #edit
-get '/transaction/edit' do 
+get '/transactions/:id/edit' do
+  @vendors = Vendor.all()
+  @categorys = Category.all()
   @transaction = Transaction.find( params[:id] )
-  erb( :edit )
+  erb( :"transaction/edit" )
 end
 
 #update
 post '/transactions/:id' do
-  Transaction.new( params ).update
+  transaction = Transaction.new(params)
+  transaction.update
   redirect to '/transactions'
 end
 
@@ -49,4 +51,11 @@ post '/transactions/:id/delete' do
   transaction = Transaction.find( params[:id] )
   transaction.delete()
   redirect to '/transactions'
+end
+
+#show
+get('/transactions/:id') do
+  id = params[:id]
+  @transaction = Transaction.find(id)
+  erb( :"transaction/show" )
 end

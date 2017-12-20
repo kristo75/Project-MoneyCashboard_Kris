@@ -13,7 +13,7 @@
 
   <div class="form-drop-down">
        <label for="category-select">Category:</label>
-       <select name="category_id" id="vendor_name-select">
+       <select name="category_id" id="category_name-select">
          <% @category.each do |category| %>
              <option value=<%= category.id %>><%= category.category_name.capitalize %></option>
          <% end %>
