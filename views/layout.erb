@@ -5,10 +5,12 @@
     <title>Student Budget Tracker</title>
 
 <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+<link rel="stylesheet" type="text/css" href="/styles/buttons.css">
+<link rel="stylesheet" type="text/css" href="/styles/forms.css">
 
   </head>
   <body>
-    <main class ="">
+    <main class ="flex flex--row">
       <nav>
         <ul>
           <li>
@@ -28,8 +30,15 @@
           <li>
             <a href="/categories/new">Create New Category</a>
           </li>
+          <li>
+            <a href="/">Summary</a>
+          </li>
         </ul>
       </nav>
+
+      <br>
+      <br>
+      <br>
       <section id="content">
       <%= yield %>
       </section>

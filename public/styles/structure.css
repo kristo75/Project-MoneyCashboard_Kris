@@ -1,8 +1,19 @@
 body {
+  float: center;
   background: grey;
   background-size: 100%;
-  color: blue;
-  font-family: georgia, serif;
-  padding: 0px;
-  margin: 20px;
+  color: black;
+  font-family: georgia;
+  padding: 50px;
+  margin: 50px;
+}
+
+
+h1 {
+  font-size: 1.8em;
+  color: black;
+  margin-bottom: 20px;
+}
+content {
+  float: center;
 }
