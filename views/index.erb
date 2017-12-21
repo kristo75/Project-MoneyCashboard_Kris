@@ -4,10 +4,10 @@
 
 <p>To date you have spent: <b>£<%= @total %></p></b>
 <br>
-<p>You have <b>£<%= @wallet.budget.to_i - @total.to_f %></b> left in your wallet,
+<p>You have <b>£<%= '%.2f' % (@wallet.budget.to_i - @total.to_f.round) %></b> left in your wallet,
   so take it easy!</p>
 
-  <img src="/images/money.png" alt="Wallet" width="460" height="300">
+  <img src="/images/money.png" alt="Wallet" width="260" height="200">
 </aside>
 <footer>
 <p>

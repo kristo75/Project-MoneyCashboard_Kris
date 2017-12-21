@@ -23,38 +23,41 @@ table, th, td
 }
 
 #categories-tables {
-  width: 20em;
+  width: 60em;
 }
 
 #categories-tables th:nth-child(1) {
-  width: 5em;
+  width: 20em;
 }
 
 #categories-tables th:nth-child(2) {
-  width: 15em;
+  width: 20em;
 }
 
 
 #transactions-tables {
-  width: 30em;
+  width: 70em;
 }
 
 #transactions-tables th:nth-child(1) {
-  width: 10em;
+  width: 17.5em;
 }
 
 #transactions-tables th:nth-child(2) {
-  width: 10em;
+  width: 17.5em;
 }
 
 #transactions-tables th:nth-child(3) {
-  width: 10em;
+  width: 17.5em;
 }
 
 #header-image {
-  width: 100%;
+  width: auto;
+  margin: auto;
 }
-
+div.header-image {
+  text-align: center;
+}
 
 aside {
   text-align: center;
@@ -85,18 +88,6 @@ input[type=number]{
     height: 20px;
 }
 
-/* #container {
-background-color: red;
-display: flex;
+footer {
+  font-size: 14pt;
 }
-
-div {
-width: 50%;
-background-color: green;
-float: center;
-}
-
-main {
-width: 40%;
-background-color: blue;
-} */
