@@ -1,8 +1,14 @@
 <h2>Vendor</h2>
+<table id="categories-tables">
+  <tr><td>Name:</th><th>Total Spend:</th></tr>
 <% @vendor_name.each do |vendor| %>
 
-<p>Name: <%= vendor.vendor_name %></p>
-<p>Total Spend: £<%= vendor.total_spend %></p>
 
-<hr/>
+
+<tr><td><%= vendor.vendor_name %></td>
+
+<td>£<%= vendor.total_spend %></td>
+<td><a href="/vendors/<%= vendor.id %>/edit">Edit:</a></td></tr>
+
 <% end %>
+  </table>

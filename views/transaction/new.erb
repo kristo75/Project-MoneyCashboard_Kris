@@ -5,6 +5,7 @@
   <div class="form-drop-down">
        <label for="vendor-select">Vendor:</label>
        <select name="vendor_id" id="vendor_name-select">
+          <option disabled selected>Please select &#9660;</option>
          <% @vendors.each do |vendor| %>
              <option value=<%= vendor.id %>><%= vendor.vendor_name.capitalize %></option>
          <% end %>
@@ -14,6 +15,7 @@
   <div class="form-drop-down">
        <label for="category-select">Category:</label>
        <select name="category_id" id="category_name-select">
+         <option disabled selected>Please select &#9660;</option>
          <% @category.each do |category| %>
              <option value=<%= category.id %>><%= category.category_name.capitalize %></option>
          <% end %>

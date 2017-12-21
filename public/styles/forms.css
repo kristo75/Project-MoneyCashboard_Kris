@@ -15,6 +15,11 @@ select {
  display: block;
 }
 
+label {
+  width:200px;
+  display: block;
+}
+
 :focus {
   outline-color: transparent;
   outline-style: none;
